@@ -1,8 +1,9 @@
 {
-  "name": "react-website",
+  "name": "react-website-frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@apollo/client": "^3.4.1",
     "@brainhubeu/react-carousel": "^2.0.4",
     "@craco/craco": "^6.2.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
@@ -22,6 +23,7 @@
     "@types/react-dom": "^16.9.0",
     "@types/react-redux": "^7.1.7",
     "@types/react-responsive": "^8.0.3",
+    "graphql": "^15.5.1",
     "react": "^17.0.2",
     "react-burger-menu": "^3.0.6",
     "react-calendar": "^3.4.0",
@@ -37,7 +39,9 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "schema:download": "npx apollo service:download --endpoint=http://localhost:9000/graphql ./src/app/graphql-schema.json",
+    "schema:generate-watch": "npx apollo codegen:generate --localSchemaFile=./src/app/graphql-schema.json --target=typescript --tagName=gql --watch"
   },
   "eslintConfig": {
     "extends": "react-app"
