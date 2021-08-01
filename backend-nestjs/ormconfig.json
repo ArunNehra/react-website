@@ -1,4 +1,6 @@
-{
+[
+  {
+    "name": "dev",
     "type": "mysql",
     "host": "localhost",
     "port": 3306,
@@ -6,13 +8,26 @@
     "password": "MyNewPass",
     "database": "carbazaar",
     "synchronize": true,
-    "entities": [
-       "dist/**/entities/*{.ts,.js}"
-    ],
-    "migrations": [
-       "src/migrations/*{.ts,.js}"
-    ],
+    "entities": ["dist/**/entities/*{.ts,.js}"],
+    "migrations": ["src/migrations/*{.ts,.js}"],
     "cli": {
-       "migrationsDir": "src/migrations"
+      "migrationsDir": "src/migrations"
     }
- }
+  },
+
+  {
+    "name": "prod",
+    "type": "mysql",
+    "host": "localhost",
+    "port": 3306,
+    "username": "root",
+    "password": "MyNewPass1",
+    "database": "carbazaar",
+    "synchronize": true,
+    "entities": ["dist/**/entities/*{.ts,.js}"],
+    "migrations": ["dist/migrations/*{.ts,.js}"],
+    "cli": {
+      "migrationsDir": "src/migrations"
+    }
+  }
+]
