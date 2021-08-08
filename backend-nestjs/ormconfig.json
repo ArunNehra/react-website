@@ -18,7 +18,7 @@
   {
     "name": "prod",
     "type": "mysql",
-    "host": "localhost",
+    "host": "mysqldb",
     "port": 3306,
     "username": "root",
     "password": "MyNewPass1",
